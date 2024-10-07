@@ -71,16 +71,22 @@ say @s Jumped!
 Provide an example on how to use the function.
 
 #### Syntax
+````
+@example
+```mcfunction
+code
 ```
-@event <path>
-```
+````
 
 #### Example
 ```mcfunction
 #> namespace
-# This function gets triggered whenever a player is jumping.
+# This is an example function.
 #
-# @event <namespace:path/to/advancement>
+# @example
+# ```mcfunction
+# execute as @a run function namespace:example
+# ```
 
-say @s Jumped!
+say Hey it's me, @s!
 ```
