@@ -54,7 +54,7 @@ The `@event` annotation provides a way of describing that this function gets cal
 
 #### Syntax
 ```
-@event <namespace:path/to/advancement>
+@event <path>
 ```
 
 #### Example
