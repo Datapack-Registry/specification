@@ -32,7 +32,7 @@ Following the description is a series of annotation tags that define the functio
 
 ## Function Annotations
 ### `@deprecated`
-The `@deprecated` annotaion marks a function as being deprecated. Always provide a reference to the new function if there is one.
+The [`@deprecated`](#depricated) annotaion marks a function as being deprecated. Always provide a reference to the new function if there is one.
 
 #### Syntax
 ```
@@ -109,3 +109,29 @@ The `@generator` tag indicates that this function generates something.
 return run random
 ```
 
+### `@param`
+The [`@param`](#param) tag provides the name, type, and description of a function parameter. The [`@param`](#param) tag requires you to specify the name of the parameter you are documenting.
+
+#### Syntax
+```
+@param {type} <name> <description>
+```
+
+#### Example
+```mcfunction
+#> namespace
+# This function greets a user.
+#
+# @param {string} user The name of the user.
+
+$say Hey, $(user).
+```
+
+```mcfunction
+#> namespace
+# This function displays an array of numbers.
+#
+# @param {int[]} numbers List of numbers to display.
+
+$say These are the numbers: $(numbers)
+```
