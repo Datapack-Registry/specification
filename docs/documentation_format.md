@@ -110,7 +110,7 @@ return run random
 ```
 
 ### `@param`
-The [`@param`](#param) tag provides the name, type, and description of a function parameter. The [`@param`](#param) tag requires you to specify the name of the parameter you are documenting.
+The [`@param`](#param) annotation provides the name, type, and description of a function parameter. The [`@param`](#param) annotation requires you to specify the name, type, and description of the parameter you are documenting.
 
 #### Syntax
 ```
