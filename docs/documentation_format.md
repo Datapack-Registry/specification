@@ -31,6 +31,24 @@ Following the description is a series of annotation tags that define the functio
 ```
 
 ## Function Annotations
+### `@api`
+Declares that the function is an API function. API functions are based on public functions but are typically exposed as part of a versioned API that attempts to abstract core logic in order to maintain backwards-compatible when possible. API functions are otherwise effectively identical to public functions.
+
+#### Syntax
+```
+@deprecated [<text>]
+```
+
+#### Example
+```mcfunction
+#> namespace
+# This function loggs the current player in the chat.
+#
+# @depricated Use `namespace:path/to/new/function` instead.
+
+say @s
+```
+
 ### `@deprecated`
 The [`@deprecated`](#deprecated) annotaion marks a function as being deprecated. Always provide a reference to the new function if there is one.
 
