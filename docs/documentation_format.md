@@ -92,7 +92,7 @@ say Hey it's me, @s!
 ```
 
 ### `@generator`
-The `@generator` tag indicates that this function generates something.
+The [`@generator`](#generator) annotation indicates that this function generates something.
 
 #### Syntax
 ```
@@ -134,4 +134,83 @@ $say Hey, $(user).
 # @param {int[]} numbers List of numbers to display.
 
 $say These are the numbers: $(numbers)
+```
+
+### `@public`
+The [`@public`](#public) annotation indicates that a function should be documented as if it were public. That means that this function can be called from outside (ex. in-game).
+
+#### Syntax
+```
+@public
+```
+
+#### Example
+```mcfunction
+#> namespace
+# This function can be called from in-game.
+#
+# @public
+
+say Hey, @s.
+```
+
+### `@returns`
+The [`@returns`](#returns) annotation documents the value that the function returns.
+
+#### Syntax
+```
+@returns {boolean|int} <description>
+```
+
+#### Example
+```mcfunction
+#> namespace
+# This function always fails.
+#
+# @returns {boolean} The failed function 
+
+return fail
+```
+
+```mcfunction
+#> namespace
+# This function always returns 42.
+#
+# @returns {int} The number 42.
+
+return 42
+```
+
+### `@see`
+The [`@see`](#see) annotation allows you to refer to another function that may be related to the one being documented.
+
+#### Syntax
+```
+@see <path>
+```
+
+#### Example
+```mcfunction
+#> namespace
+# This function references an other function.
+#
+# @see namespace:path/to/other/function
+```
+
+### `@this`
+The [`@this`](#this) annotation indicates what the this keyword refers to when used within the function. Often times you need to tag an entity with the `this` tag in order to reference it later.
+
+#### Syntax
+```
+@this <entity> [<description>]
+```
+
+#### Example
+```mcfunction
+#> namespace
+# This function says who is 'this'.
+#
+# @this player The player that triggered the advancement.
+
+say @a[tag=this] is the current 'this' reference.
 ```
