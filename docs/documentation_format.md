@@ -32,7 +32,7 @@ Following the description is a series of annotation tags that define the functio
 
 ## Function Annotations
 ### `@deprecated`
-The [`@deprecated`](#depricated) annotaion marks a function as being deprecated. Always provide a reference to the new function if there is one.
+The [`@deprecated`](#deprecated) annotaion marks a function as being deprecated. Always provide a reference to the new function if there is one.
 
 #### Syntax
 ```
