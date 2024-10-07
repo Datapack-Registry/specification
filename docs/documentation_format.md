@@ -31,3 +31,39 @@ Following the description is a series of annotation tags that define the functio
 ```
 
 ## Function Annotations
+### `@deprecated`
+The `@deprecated` annotaion marks a function as being deprecated. Always provide a reference to the new function if there is one.
+
+#### Syntax
+```
+@deprecated [<text>]
+```
+
+#### Example
+```mcfunction
+#> namespace
+# This function loggs the current player in the chat.
+#
+# @depricated Use `namespace:path/to/new/function` instead.
+
+say @s
+```
+
+### `@event`
+The `@event` annotation provides a way of describing that this function gets called by an advancement.
+
+#### Syntax
+```
+@event <namespace:path/to/advancement>
+```
+
+#### Example
+```mcfunction
+#> namespace
+# This function gets triggered whenever a player is jumping.
+#
+# @event <namespace:path/to/advancement>
+
+say @s Jumped!
+```
+
