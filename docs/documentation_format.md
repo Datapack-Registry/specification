@@ -8,7 +8,7 @@ A function always begins with a function header, which is a series of comments t
 #
 # Not what the function is doing.
 #
-# @context core
+# @param {string} macroName - Description of macroName
 ```
 
 The first line of the function header is preceded by > and contains nothing but the namespace of the function:
@@ -22,7 +22,12 @@ The next section of the function header is a description of the function's purpo
 #
 # Not what the function is doing.
 ```
+> Newlines can be achived by adding two spaces (`  `) at the end of the line.
 
 Following the description is a series of annotation tags that define the function's interface:
+
+```mcfunction
+# @param {string} macroName - Description of macroName
+```
 
 ## Function Annotations
