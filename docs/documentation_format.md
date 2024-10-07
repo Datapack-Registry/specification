@@ -85,48 +85,6 @@ Describing that this function gets called by an advancement.
 say @s Jumped!
 ```
 
-### `@example`
-Provide an example on how to use the function.
-
-#### Syntax
-````
-@example
-```mcfunction
-code
-```
-````
-
-#### Example
-```mcfunction
-#> namespace
-# This is an example function.
-#
-# @example
-# ```mcfunction
-# execute as @a run function namespace:example
-# ```
-
-say Hey it's me, @s!
-```
-
-### `@generator`
-The [`@generator`](#generator) annotation indicates that this function generates something.
-
-#### Syntax
-```
-@generator [<text>]
-```
-
-#### Example
-```mcfunction
-#> namespace
-# This function generates a random number.
-#
-# @generator Generates a random number.
-
-return run random
-```
-
 ### `@param`
 The [`@param`](#param) annotation provides the name, type, and description of a function parameter. The [`@param`](#param) annotation requires you to specify the name, type, and description of the parameter you are documenting.
 
