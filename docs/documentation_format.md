@@ -90,3 +90,22 @@ code
 
 say Hey it's me, @s!
 ```
+
+### `@generator`
+The `@generator` tag indicates that this function generates something.
+
+#### Syntax
+```
+@generator [<text>]
+```
+
+#### Example
+```mcfunction
+#> namespace
+# This function generates a random number.
+#
+# @generator Generates a random number.
+
+return run random
+```
+
