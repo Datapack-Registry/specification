@@ -50,7 +50,7 @@ say @s
 ```
 
 ### `@event`
-The `@event` annotation provides a way of describing that this function gets called by an advancement.
+Describing that this function gets called by an advancement.
 
 #### Syntax
 ```
@@ -67,3 +67,20 @@ The `@event` annotation provides a way of describing that this function gets cal
 say @s Jumped!
 ```
 
+### `@example`
+Provide an example on how to use the function.
+
+#### Syntax
+```
+@event <path>
+```
+
+#### Example
+```mcfunction
+#> namespace
+# This function gets triggered whenever a player is jumping.
+#
+# @event <namespace:path/to/advancement>
+
+say @s Jumped!
+```
