@@ -22,7 +22,7 @@ The next section of the function header is a description of the function's purpo
 #
 # Not what the function is doing.
 ```
-> Newlines can be achived by adding two spaces (`  `) at the end of the line.
+> Use the default Markdown syntax for additional styling.
 
 Following the description is a series of annotation tags that define the function's interface:
 
@@ -33,7 +33,7 @@ Following the description is a series of annotation tags that define the functio
 ## Function Annotations
 ### `@api`
 #### Description
-Declares that the function is an API function. API functions are based on public functions but are typically exposed as part of a versioned API that attempts to abstract core logic in order to maintain backwards-compatible when possible. API functions are otherwise effectively identical to public functions.
+Declares that the function is an API function. API functions are based on public functions, but are usually exposed as part of a versioned API that attempts to abstract the core logic to remain backward compatible where possible. API functions are otherwise virtually identical to public functions.
 
 #### Syntax
 ```
@@ -54,7 +54,8 @@ scoreborad players set $api.internal api 42
 
 ### `@deprecated`
 #### Description
-The `@deprecated` annotaion marks a function as being deprecated. Always provide a reference to the new function if there is one.
+Declares that this function should no longer be used and may be removed in a future version of the datapack.
+It is always recommended to specify a replacement function that should be used instead.
 
 #### Syntax
 ```
@@ -71,32 +72,20 @@ The `@deprecated` annotaion marks a function as being deprecated. Always provide
 say @s
 ```
 
----
-
-### `@event`
-#### Description
-Describing that this function gets called by an advancement.
-
-#### Syntax
-```
-@event <path>
-```
-
-#### Example
 ```mcfunction
 #> namespace
-# This function gets triggered whenever a player is jumping.
+# This function loggs the current player in the chat.
 #
-# @event namespace:path/to/advancement
+# @depricated This function is obsolete now.
 
-say @s Jumped!
+say @s
 ```
 
 ---
 
 ### `@param`
 #### Description
-The `@param` annotation provides the name, type, and description of a function parameter. The `@param` annotation requires you to specify the name, type, and description of the parameter you are documenting.
+The `@param` annotation specifies the name, type and description of a function parameter.
 
 #### Syntax
 ```
@@ -126,7 +115,7 @@ $say These are the numbers: $(numbers)
 
 ### `@public`
 #### Description
-The `@public` annotation indicates that a function should be documented as if it were public. That means that this function can be called from outside (ex. in-game).
+Declares that this function should/may be called outside the datapack. For example, by the player or in a command block. These functions should be simple and clearly structured so that they can be used easily from the outside.
 
 #### Syntax
 ```
@@ -136,7 +125,7 @@ The `@public` annotation indicates that a function should be documented as if it
 #### Example
 ```mcfunction
 #> namespace
-# This function can be called from in-game.
+# This function can be called from a command block.
 #
 # @public
 
@@ -147,7 +136,7 @@ say Hey, @s.
 
 ### `@reads`
 #### Description
-Declare any values that are being read by the function. The syntax is identical to [`@writes`](#writes).
+Declares that this value is being read by the function. The syntax is identical to [`@writes`](#writes).
 
 #### Syntax
 ```
@@ -177,7 +166,7 @@ return run scoreboard players get @s namespace.example
 
 ### `@returns`
 #### Description
-The `@returns` annotation documents the value that the function returns.
+Declares the return value of the function. The return value can either be a boolean value, such as `fail` (falsy) or an integer (truthy), or just an integer (int).
 
 #### Syntax
 ```
@@ -207,7 +196,7 @@ return 42
 
 ### `@see`
 #### Description
-The `@see` annotation allows you to refer to another function that may be related to the one being documented.
+Declares a reference to refer to another function that may be related to the one being documented.
 
 #### Syntax
 ```
@@ -226,7 +215,7 @@ The `@see` annotation allows you to refer to another function that may be relate
 
 ### `@this`
 #### Description
-The `@this` annotation indicates what the this keyword refers to when used within the function. Often times you need to tag an entity with the `this` tag in order to reference it later.
+Declares what the keyword this refers to when it is used within the function. It is often necessary to mark an entity with the "this" tag in order to be able to refer to it later.
 
 #### Syntax
 ```
@@ -247,7 +236,7 @@ say @a[tag=this] is the current 'this' reference.
 
 ### `@writes`
 #### Description
-Declare any values that are being written by the function. The syntax is identical to [`@reads`](#reads).
+Declares that this value is being written by the function. The syntax is identical to [`@reads`](#reads).
 
 #### Syntax
 ```
