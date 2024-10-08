@@ -11,7 +11,7 @@ A function always begins with a function header, which is a series of comments t
 # @param {string} macroName - Description of macroName
 ```
 
-The first line of the function header is preceded by > and contains nothing but the namespace of the function:
+The first line of the function header is preceded by `>` and contains nothing but the namespace of the function:
 ```mcfunction
 #> namespace
 ```
@@ -36,7 +36,7 @@ Declares that the function is an API function. API functions are based on public
 
 #### Syntax
 ```
-@deprecated [<text>]
+@api
 ```
 
 #### Example
@@ -44,13 +44,13 @@ Declares that the function is an API function. API functions are based on public
 #> namespace
 # This function loggs the current player in the chat.
 #
-# @depricated Use `namespace:path/to/new/function` instead.
+# @api
 
-say @s
+scoreborad players set $api.internal api 42
 ```
 
 ### `@deprecated`
-The [`@deprecated`](#deprecated) annotaion marks a function as being deprecated. Always provide a reference to the new function if there is one.
+The `@deprecated` annotaion marks a function as being deprecated. Always provide a reference to the new function if there is one.
 
 #### Syntax
 ```
@@ -86,7 +86,7 @@ say @s Jumped!
 ```
 
 ### `@param`
-The [`@param`](#param) annotation provides the name, type, and description of a function parameter. The [`@param`](#param) annotation requires you to specify the name, type, and description of the parameter you are documenting.
+The `@param` annotation provides the name, type, and description of a function parameter. The `@param` annotation requires you to specify the name, type, and description of the parameter you are documenting.
 
 #### Syntax
 ```
@@ -113,7 +113,7 @@ $say These are the numbers: $(numbers)
 ```
 
 ### `@public`
-The [`@public`](#public) annotation indicates that a function should be documented as if it were public. That means that this function can be called from outside (ex. in-game).
+The `@public` annotation indicates that a function should be documented as if it were public. That means that this function can be called from outside (ex. in-game).
 
 #### Syntax
 ```
@@ -131,7 +131,7 @@ say Hey, @s.
 ```
 
 ### `@returns`
-The [`@returns`](#returns) annotation documents the value that the function returns.
+The `@returns` annotation documents the value that the function returns.
 
 #### Syntax
 ```
@@ -158,7 +158,7 @@ return 42
 ```
 
 ### `@see`
-The [`@see`](#see) annotation allows you to refer to another function that may be related to the one being documented.
+The `@see` annotation allows you to refer to another function that may be related to the one being documented.
 
 #### Syntax
 ```
@@ -174,7 +174,7 @@ The [`@see`](#see) annotation allows you to refer to another function that may b
 ```
 
 ### `@this`
-The [`@this`](#this) annotation indicates what the this keyword refers to when used within the function. Often times you need to tag an entity with the `this` tag in order to reference it later.
+The `@this` annotation indicates what the this keyword refers to when used within the function. Often times you need to tag an entity with the `this` tag in order to reference it later.
 
 #### Syntax
 ```
