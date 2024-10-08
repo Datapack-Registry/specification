@@ -90,7 +90,7 @@ The `@param` annotation provides the name, type, and description of a function p
 
 #### Syntax
 ```
-@param {type} <name> <description>
+@param {<type>} <name> <description>
 ```
 
 #### Example
@@ -128,6 +128,33 @@ The `@public` annotation indicates that a function should be documented as if it
 # @public
 
 say Hey, @s.
+```
+
+### `@reads`
+Declare any additional values that are being read by the function.
+
+#### Syntax
+```
+@reads {storage|scoreboard} <id> [<path>|<entity>]
+```
+
+#### Example
+```mcfunction
+#> namespace
+# This function reads from a storage and returns that value.
+#
+# @reads {storage} namespace:example path
+
+return run data get storage namespace:example path
+```
+
+```mcfunction
+#> namespace
+# This function reads from a scoreboard and returns that value.
+#
+# @reads {scoreboard} namespace.example @s
+
+return run scoreboard players get @s namespace.example
 ```
 
 ### `@returns`
