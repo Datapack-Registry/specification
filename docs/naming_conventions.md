@@ -10,7 +10,7 @@ The restriction to this set of characters ensures that files and folders are tre
 Globally predefined function file names:
 - `load.mcfunction` This file is called at every start
 - `tick.mcfunction` This file is called every tick
-- 
+
 ### Structure
 Function files and folders should be written in [snake_case](https://en.wikipedia.org/wiki/Snake_case). Numbers within the function or folder name should not be used for numbering in order to enforce a certain structure.
 
