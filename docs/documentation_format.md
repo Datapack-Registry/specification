@@ -49,6 +49,8 @@ Declares that the function is an API function. API functions are based on public
 scoreborad players set $api.internal api 42
 ```
 
+---
+
 ### `@deprecated`
 The `@deprecated` annotaion marks a function as being deprecated. Always provide a reference to the new function if there is one.
 
@@ -67,6 +69,8 @@ The `@deprecated` annotaion marks a function as being deprecated. Always provide
 say @s
 ```
 
+---
+
 ### `@event`
 Describing that this function gets called by an advancement.
 
@@ -84,6 +88,8 @@ Describing that this function gets called by an advancement.
 
 say @s Jumped!
 ```
+
+---
 
 ### `@param`
 The `@param` annotation provides the name, type, and description of a function parameter. The `@param` annotation requires you to specify the name, type, and description of the parameter you are documenting.
@@ -112,6 +118,8 @@ $say Hey, $(user).
 $say These are the numbers: $(numbers)
 ```
 
+---
+
 ### `@public`
 The `@public` annotation indicates that a function should be documented as if it were public. That means that this function can be called from outside (ex. in-game).
 
@@ -130,8 +138,10 @@ The `@public` annotation indicates that a function should be documented as if it
 say Hey, @s.
 ```
 
+---
+
 ### `@reads`
-Declare any additional values that are being read by the function.
+Declare any values that are being read by the function. The syntax is identical to [`@writes`](#writes).
 
 #### Syntax
 ```
@@ -156,6 +166,8 @@ return run data get storage namespace:example path
 
 return run scoreboard players get @s namespace.example
 ```
+
+---
 
 ### `@returns`
 The `@returns` annotation documents the value that the function returns.
@@ -184,6 +196,8 @@ return fail
 return 42
 ```
 
+---
+
 ### `@see`
 The `@see` annotation allows you to refer to another function that may be related to the one being documented.
 
@@ -199,6 +213,8 @@ The `@see` annotation allows you to refer to another function that may be relate
 #
 # @see namespace:path/to/other/function
 ```
+
+---
 
 ### `@this`
 The `@this` annotation indicates what the this keyword refers to when used within the function. Often times you need to tag an entity with the `this` tag in order to reference it later.
@@ -216,4 +232,33 @@ The `@this` annotation indicates what the this keyword refers to when used withi
 # @this player The player that triggered the advancement.
 
 say @a[tag=this] is the current 'this' reference.
+```
+
+---
+
+### `@writes`
+Declare any values that are being written by the function. The syntax is identical to [`@reads`](#reads).
+
+#### Syntax
+```
+@writes {storage|scoreboard} <id> [<path>|<entity>]
+```
+
+#### Example
+```mcfunction
+#> namespace
+# This function writes to a storage.
+#
+# @writes {storage} namespace:example path
+
+data modify storage namespace:example path set value 42
+```
+
+```mcfunction
+#> namespace
+# This function writes to a scoreboard.
+#
+# @writes {scoreboard} namespace.example @s
+
+scoreboard players set @s namespace.example 42
 ```
