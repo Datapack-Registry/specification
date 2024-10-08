@@ -80,7 +80,7 @@ Describing that this function gets called by an advancement.
 #> namespace
 # This function gets triggered whenever a player is jumping.
 #
-# @event <namespace:path/to/advancement>
+# @event namespace:path/to/advancement
 
 say @s Jumped!
 ```
