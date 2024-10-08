@@ -42,7 +42,7 @@ Declares that the function is an API function. API functions are based on public
 #### Example
 ```mcfunction
 #> namespace
-# This function loggs the current player in the chat.
+# This function is part of an API.
 #
 # @api
 
