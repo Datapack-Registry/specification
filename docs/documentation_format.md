@@ -8,7 +8,7 @@ A function always begins with a function header, which is a series of comments t
 #
 # Not what the function is doing.
 #
-# @param {string} macroName - Description of macroName
+# @param {string} macroName Description of macroName
 ```
 
 The first line of the function header is preceded by `>` and contains nothing but the namespace of the function:
