@@ -27,7 +27,7 @@ The next section of the function header is a description of the function's purpo
 Following the description is a series of annotation tags that define the function's interface:
 
 ```mcfunction
-# @param {string} macroName - Description of macroName
+# @param {string} macroName Description of macroName
 ```
 
 ## Function Annotations
