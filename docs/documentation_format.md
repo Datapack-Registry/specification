@@ -32,6 +32,7 @@ Following the description is a series of annotation tags that define the functio
 
 ## Function Annotations
 ### `@api`
+#### Description
 Declares that the function is an API function. API functions are based on public functions but are typically exposed as part of a versioned API that attempts to abstract core logic in order to maintain backwards-compatible when possible. API functions are otherwise effectively identical to public functions.
 
 #### Syntax
@@ -52,6 +53,7 @@ scoreborad players set $api.internal api 42
 ---
 
 ### `@deprecated`
+#### Description
 The `@deprecated` annotaion marks a function as being deprecated. Always provide a reference to the new function if there is one.
 
 #### Syntax
@@ -72,6 +74,7 @@ say @s
 ---
 
 ### `@event`
+#### Description
 Describing that this function gets called by an advancement.
 
 #### Syntax
@@ -92,6 +95,7 @@ say @s Jumped!
 ---
 
 ### `@param`
+#### Description
 The `@param` annotation provides the name, type, and description of a function parameter. The `@param` annotation requires you to specify the name, type, and description of the parameter you are documenting.
 
 #### Syntax
@@ -121,6 +125,7 @@ $say These are the numbers: $(numbers)
 ---
 
 ### `@public`
+#### Description
 The `@public` annotation indicates that a function should be documented as if it were public. That means that this function can be called from outside (ex. in-game).
 
 #### Syntax
@@ -141,6 +146,7 @@ say Hey, @s.
 ---
 
 ### `@reads`
+#### Description
 Declare any values that are being read by the function. The syntax is identical to [`@writes`](#writes).
 
 #### Syntax
@@ -170,6 +176,7 @@ return run scoreboard players get @s namespace.example
 ---
 
 ### `@returns`
+#### Description
 The `@returns` annotation documents the value that the function returns.
 
 #### Syntax
@@ -199,6 +206,7 @@ return 42
 ---
 
 ### `@see`
+#### Description
 The `@see` annotation allows you to refer to another function that may be related to the one being documented.
 
 #### Syntax
@@ -217,6 +225,7 @@ The `@see` annotation allows you to refer to another function that may be relate
 ---
 
 ### `@this`
+#### Description
 The `@this` annotation indicates what the this keyword refers to when used within the function. Often times you need to tag an entity with the `this` tag in order to reference it later.
 
 #### Syntax
@@ -237,6 +246,7 @@ say @a[tag=this] is the current 'this' reference.
 ---
 
 ### `@writes`
+#### Description
 Declare any values that are being written by the function. The syntax is identical to [`@reads`](#reads).
 
 #### Syntax
