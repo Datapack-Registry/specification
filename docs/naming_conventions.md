@@ -16,3 +16,6 @@ Function files and folders should be written in [snake_case](https://en.wikipedi
 
 Try to organize your files into "modules". Modules are folders which contain either/or a `tick.mcfunction` and `load.mcfunction` function file.
 The `tick.mcfunction` function file serves as the "entry point" for the module and the `load.mcfunction` function file serves as the "setup".
+
+## Content
+### User Interaction
