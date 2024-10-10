@@ -1,1 +1,1 @@
-# mcfunction-spec
+# Minecraft Datapack Specification
