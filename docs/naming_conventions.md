@@ -33,11 +33,11 @@ If your datapack creates storages, the following functions should be available:
 - `namespace:app/storage/add` This function should be called by the `load.json` when the Datapack is started. All initial values for a storage are set in this file.
 - `namespace:app/storage/remove` This function should be called by the [`namespace:uninstall`](#uninstall-or-removal) function when the datapack is removed. In this file, all storages that were previously created are removed so that no artifacts are left behind. It is also recommended to inform the user that after removing the storages the `storage_<namespace>.dat` inside the `saves/<world>` folder can be deleted, because Minecraft doesn't remove empty storage files by itself.
 
-### ...
-...
-
-### User Interaction
+### Items
 If your Datapack provides items for a player, the following functions should be available to the player:
 
 - `namespace:items/give` Gives the player all available items provided by the datapack.
 - `namespace:.../<module>/give` Gives the player all/the available items for the respective module. For example, `namespace:blocks/glowing_dirt/give` would give the player the items for the module `glowing_dirt`.
+
+### ...
+...
