@@ -8,8 +8,8 @@ The name of function files and folders should only contain the following charact
 The restriction to this set of characters ensures that files and folders are treated the same on all operating systems and that it is universally readable.
 
 Globally predefined function file names:
-- `load.mcfunction` This file is called at every start
-- `tick.mcfunction` This file is called every tick
+- `load.mcfunction` This function is called at every start
+- `tick.mcfunction` This function is called every tick
 
 ### Structure
 Function files and folders should be written in [snake_case](https://en.wikipedia.org/wiki/Snake_case). Numbers within the function or folder name should not be used for numbering in order to enforce a certain structure.
@@ -33,10 +33,7 @@ If your datapack creates storages, the following functions should be available:
 - `namespace:app/storage/add` This function should be called by the `load.json` when the Datapack is started. All initial values for a storage are set in this file.
 - `namespace:app/storage/remove` This function should be called by the [`namespace:uninstall`](#uninstall-or-removal) function when the datapack is removed. In this file, all storages that were previously created are removed so that no artifacts are left behind. It is also recommended to inform the user that after removing the storages the `storage_<namespace>.dat` inside the `saves/<world>` folder can be deleted, because Minecraft doesn't remove empty storage files by itself.
 
-### External Libraries
-...
-
-### 
+### ...
 ...
 
 ### User Interaction
