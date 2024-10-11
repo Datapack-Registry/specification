@@ -24,7 +24,7 @@ Your datapack should always provide a `namespace:uninstall` function for the use
 ### Advancements
 If your datapack creates advancements, the following functions should exist:
 
-```gcode
+```yml
 .
 └ namespace
   └ functions
