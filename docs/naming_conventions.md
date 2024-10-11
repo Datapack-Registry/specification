@@ -25,19 +25,24 @@ Your datapack should always provide a `namespace:uninstall` function for the use
 If your datapack creates advancements, the following functions should exist:
 
 ```yml
-.
-└ namespace
-  └ functions
-    └ app
-      └ advancements
-        ├ reset.mcfunction
-        └ ...
-          └ <advancement>
-            └ load.mcfunction
+Datapack
+├─ pack.mcmeta
+└─ data
+   └─ <namespace>
+      ├─ advancement
+      │  └─ <...>
+      │     └─ <advancement name>.json
+      └─ functio
+         └─ app
+            └─ advancement
+               ├─ reset.mcfunction
+               └─ <...>
+                  └─ <advancement name>
+                     └─ trigger.mcfunction
 ```
 
 - `reset.mcfunction` This function should be called by the `load.json` file when the Datapack is started. All advancements for each player will get reset by this function.
-- `load.mcfunction` This function should be called by the `advancement.json` when the advancement triggers. The folder structure to this function should mimic the folder sructure to te actual advancement.
+- `trigger.mcfunction` This function should be called by the `<advancement name>.json` when the advancement triggers. The folder structure to this function should mimic the folder sructure to te actual advancement.
 
 ### Scoreboards
 If your datapack creates scoreboards, the following functions should exist:
