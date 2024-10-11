@@ -19,10 +19,21 @@ The `tick.mcfunction` function file serves as the "entry point" for the module a
 
 ## Content
 ### Uninstall or Removal
-Your datapack should always provide a `namespace:uninstall` function for the user. This function is responsible for calling all the remove functions to leave no artifacts of the datapack behind. This function should also disable the datapack after calling all remove functions.
+Your datapack should always provide a `namespace:uninstall` function for the user.
+
+```yml
+Datapack
+├─ pack.mcmeta
+└─ data
+   └─ <namespace>
+      └─ function
+         └─ uninstall.mcfunction
+```
+
+- `uninstall.mcfunction` This function is responsible for calling all the remove functions to leave no artifacts of the datapack behind. This function should also disable the datapack after calling all remove functions.
 
 ### Advancements
-If your datapack creates advancements, the following functions should exist:
+If your datapack creates advancements, the following directory structure should exist:
 
 ```yml
 Datapack
@@ -40,15 +51,26 @@ Datapack
                   └─ trigger.mcfunction
 ```
 
-- `...` The advancement can also be nested inside sub directories.
+- `...` The advancement can also be nested inside sub directories. The folder structure should be the same.
 - `reset.mcfunction` This function should be called by the `load.json` file when the Datapack is started. All advancements for each player will get reset by this function.
-- `trigger.mcfunction` This function should be called by the `<advancement name>.json` when the advancement triggers. The folder structure to this function should mimic the folder sructure to te actual advancement.
+- `trigger.mcfunction` This function should be called by the `<advancement name>.json` when the advancement triggers and serves as entry point to call other functions from there. Do not put complex logic into this function.
 
 ### Scoreboards
-If your datapack creates scoreboards, the following functions should exist:
+If your datapack creates scoreboards, the following directory structure should exist:
 
-- `namespace:app/scoreboards/add` This function should be called by the `load.json` when the datapack is started. All scoreboards are created in this file and initial values are set for the scoreboards.
-- `namespace:app/scoreboards/remove` This function should be called by the [`namespace:uninstall`](#uninstall-or-removal) function when the datapack is removed. In this file, all scoreboards that were previously created are removed so that no artifacts are left behind.
+```yml
+Datapack
+├─ pack.mcmeta
+└─ data
+   └─ <namespace>
+      └─ function
+         └─ scoreboard
+            ├─ add.mcfunction
+            └─ remove.mcfunction
+```
+
+- `add.mcfunction` This function should be called by the `load.json` when the datapack is started. All scoreboards are created in this file and initial values are set for the scoreboards.
+- `remove.mcfunction` This function should be called by the [`namespace:uninstall`](#uninstall-or-removal) function when the datapack is removed. In this file, all scoreboards that were previously created are removed so that no artifacts are left behind.
 
 ### Storages
 If your datapack creates storages, the following functions should exist:
