@@ -40,6 +40,7 @@ Datapack
                   └─ trigger.mcfunction
 ```
 
+- `...` The advancement can also be nested inside sub directories.
 - `reset.mcfunction` This function should be called by the `load.json` file when the Datapack is started. All advancements for each player will get reset by this function.
 - `trigger.mcfunction` This function should be called by the `<advancement name>.json` when the advancement triggers. The folder structure to this function should mimic the folder sructure to te actual advancement.
 
