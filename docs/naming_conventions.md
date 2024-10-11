@@ -33,12 +33,11 @@ Datapack
       │  └─ <...>
       │     └─ <advancement name>.json
       └─ function
-         └─ app
-            └─ advancement
-               ├─ reset.mcfunction
-               └─ <...>
-                  └─ <advancement name>
-                     └─ trigger.mcfunction
+         └─ advancement
+            ├─ reset.mcfunction
+            └─ <...>
+               └─ <advancement name>
+                  └─ trigger.mcfunction
 ```
 
 - `reset.mcfunction` This function should be called by the `load.json` file when the Datapack is started. All advancements for each player will get reset by this function.
