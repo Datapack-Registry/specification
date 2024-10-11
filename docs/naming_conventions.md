@@ -108,7 +108,8 @@ Datapack
 ```
 
 - `<namespace>:item/all/give` Gives the player all available items provided by the datapack.
-- `<namespace>:<...>/<module>/give` Gives the player all/the available items for the respective module. For example, `<namespace>:app/blocks/glowing_dirt/give` would give the player the items for the module `glowing_dirt`.
+- `<namespace>:<...>/<module>/give` Gives the player all/the available items for the respective module.<br>
+  > For example, `<namespace>:app/blocks/glowing_dirt/give` would give the player the items for the module `glowing_dirt`.
 
 ### ...
 ...
