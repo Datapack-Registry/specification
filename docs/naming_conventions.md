@@ -32,7 +32,7 @@ Datapack
       ├─ advancement
       │  └─ <...>
       │     └─ <advancement name>.json
-      └─ functio
+      └─ function
          └─ app
             └─ advancement
                ├─ reset.mcfunction
