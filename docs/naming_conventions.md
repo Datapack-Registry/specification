@@ -37,6 +37,9 @@ Datapack
 
 - `<namespace>:uninstall` This function is responsible for calling all the remove functions to leave no artifacts of the datapack behind. This function should also disable the datapack after calling all remove functions.
 
+> [!NOTE]
+> In the real world, almost every program provides an uninstall file in addition to the installation file. So datapacks should also always provide an uninstall function.
+
 ### Advancements
 If your datapack creates advancements, the following directory structure should exist:
 
