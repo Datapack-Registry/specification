@@ -35,6 +35,34 @@ Datapack
 ### Advancements
 If your datapack creates advancements, the following directory structure should exist:
 
+#### Simple Structure
+If you have a simple advancement that can be easily invoked and does not require any additional functionality, please use the following directory structure:
+
+```yml
+Datapack
+├─ pack.mcmeta
+└─ data
+   └─ <namespace>
+      ├─ advancement
+      │  └─ <...>
+      │     └─ <advancement name>.json
+      └─ function
+         └─ advancement
+            ├─ reset.mcfunction
+            └─ <...>
+               └─ <advancement name>.mcfunction
+```
+
+- `<...>` The advancment can also be nested in subdirectories. The directory structure should be the same to avoid naming collisions.
+- `<namespace>:advancement/reset` This function should be called from the `#minecraft:load.json` file when the datapack is started. All advancements for each player are reset by this function.
+- `<namespace>:advancement/<...>/<advancement name>` This function should be called from the `<namespace>:<...>/<advancement name>.json` file when the advancement is triggered, and serves as an entry point from which to call other functions. There should be no complex logic built into this function.
+
+> [!NOTE]
+> We do not want to force the user into creating a separate sub-folder for each advancement, which is why functions for advancements can also be called directly via the name. If the advancement requires more complex logic for the functionality, then you should use the [complex structure](#complex-structure).
+
+#### Complex Structure
+If your Advancement is more complex and you need additional functions for functionality please use the following directory structure:
+
 ```yml
 Datapack
 ├─ pack.mcmeta
@@ -48,12 +76,17 @@ Datapack
             ├─ reset.mcfunction
             └─ <...>
                └─ <advancement name>
-                  └─ trigger.mcfunction
+                  ├─ <additional functions...>.mcfunction
+                  └─ trigger.mcfunction
 ```
 
-- `<...>` The advancement can also be nested inside sub directories. The folder structure should be the same.
-- `<namespace>:advancement/reset` This function should be called by the `#minecraft:load.json` file when the Datapack is started. All advancements for each player will get reset by this function.
-- `<namespace>:advancement/<...>/<advancement>/trigger` This function should be called by the `<namespace>:<...>/<advancement name>.json` when the advancement triggers and serves as entry point to call other functions from there. Do not put complex logic into this function.
+- `<...>` The advancment can also be nested in subdirectories. The directory structure should be the same to avoid naming collisions.
+- `<namespace>:advancement/reset` This function should be called from the `#minecraft:load.json` file when the datapack is started. All advancements for each player are reset by this function.
+- `<namespace>:advancement/<...>/<advancement name>/<additional functions...>` These functions should be specific to this advancement and not complex.
+- `<namespace>:advancement/<...>/<advancement name>/trigger` This function should be called from the `<namespace>:<...>/<advancement name>.json` file when the advancement is triggered, and serves as an entry point from which to call other functions. There should be no complex logic built into this function.
+
+> [!NOTE]
+> Sometimes an advancement needs additional functions for the actual functionality. If this is the case, we do not want the user to separate the functionality from the actual advancement, as this functionality should still be part of the actual advancement. If this functionality is not part of the actual advancement, then you should use the [simple structure](#simple-structure) and move the functionality to another location within your application. This ensures a clean structure.
 
 ### Scoreboards
 If your datapack creates scoreboards, the following directory structure should exist:
