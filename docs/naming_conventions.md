@@ -20,7 +20,7 @@ Organize your files into "modules". Modules are folders which contain either/or 
 The `tick.mcfunction` function file serves as the "entry point" for the module and the `load.mcfunction` function file serves as the "setup".
 
 > [!NOTE]
-> The "modules" ensure a clear global structure for the entire project. 
+> The "modules" ensure a clear global structure for the entire project. This makes it easier for other developers to understand the source code and further work on it.
 
 ## Content
 ### Uninstall or Removal
