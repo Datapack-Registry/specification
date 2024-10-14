@@ -58,7 +58,7 @@ Datapack
 - `<namespace>:advancement/<...>/<advancement name>` This function should be called from the `<namespace>:<...>/<advancement name>.json` file when the advancement is triggered, and serves as an entry point from which to call other functions. There should be no complex logic built into this function.
 
 > [!NOTE]
-> We do not want to force the user into creating a separate sub-folder for each advancement, which is why functions for advancements can also be called directly via the name. If the advancement requires more complex logic for the functionality, then you should use the [complex structure](#complex-structure).
+> We do not want to force the user into creating a separate sub-folder for each advancement if they only want to call one function, which is why functions for advancements can also be called directly via the name. If the advancement requires more complex logic for the functionality, then you should use the [complex structure](#complex-structure).
 
 #### Complex Structure
 If your Advancement is more complex and you need additional functions for functionality please use the following directory structure:
