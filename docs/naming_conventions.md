@@ -6,7 +6,7 @@ The [documentation format](./documentation_format.md) is recommended for maintai
 ### Name
 The name of function files and folders should only contain the following characters: `a-z`, `0-9`, `_` and `.`.
 
-> [NOTE]
+> [!NOTE]
 > The reason for this is that different operating systems treat file and folder names differently due to casing or certain special characters. The restriction to this set of characters ensures that files and folders are treated the same on all operating systems and that it is universally readable.
 
 Globally predefined function file names:
