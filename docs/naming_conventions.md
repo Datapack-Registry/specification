@@ -27,11 +27,11 @@ The `tick.mcfunction` function file serves as the "entry point" for the module a
 Your datapack should always provide a `<namespace>:uninstall` function for the user.
 
 ```yml
-Datapack
+Datapack/
 ├─ pack.mcmeta
-└─ data
-   └─ <namespace>
-      └─ function
+└─ data/
+   └─ <namespace>/
+      └─ function/
          └─ uninstall.mcfunction
 ```
 
@@ -47,17 +47,17 @@ If your datapack creates advancements, the following directory structure should 
 If you have a simple advancement that can be easily invoked and does not require any additional functionality, please use the following directory structure:
 
 ```yml
-Datapack
+Datapack/
 ├─ pack.mcmeta
-└─ data
-   └─ <namespace>
-      ├─ advancement
-      │  └─ <...>
+└─ data/
+   └─ <namespace>/
+      ├─ advancement/
+      │  └─ <...>/
       │     └─ <advancement name>.json
-      └─ function
-         └─ advancement
+      └─ function/
+         └─ advancement/
             ├─ reset.mcfunction
-            └─ <...>
+            └─ <...>/
                └─ <advancement name>.mcfunction
 ```
 
@@ -72,18 +72,18 @@ Datapack
 If your Advancement is more complex and you need additional functions for functionality please use the following directory structure:
 
 ```yml
-Datapack
+Datapack/
 ├─ pack.mcmeta
-└─ data
-   └─ <namespace>
-      ├─ advancement
-      │  └─ <...>
+└─ data/
+   └─ <namespace>/
+      ├─ advancement/
+      │  └─ <...>/
       │     └─ <advancement name>.json
-      └─ function
-         └─ advancement
+      └─ function/
+         └─ advancement/
             ├─ reset.mcfunction
-            └─ <...>
-               └─ <advancement name>
+            └─ <...>/
+               └─ <advancement name>/
                   ├─ <additional functions...>.mcfunction
                   └─ trigger.mcfunction
 ```
@@ -100,12 +100,12 @@ Datapack
 If your datapack creates scoreboards, the following directory structure should exist:
 
 ```yml
-Datapack
+Datapack/
 ├─ pack.mcmeta
-└─ data
-   └─ <namespace>
-      └─ function
-         └─ scoreboard
+└─ data/
+   └─ <namespace>/
+      └─ function/
+         └─ scoreboard/
             ├─ add.mcfunction
             └─ remove.mcfunction
 ```
@@ -117,12 +117,12 @@ Datapack
 If your datapack creates storages, the following directory structure should exist:
 
 ```yml
-Datapack
+Datapack/
 ├─ pack.mcmeta
-└─ data
-   └─ <namespace>
-      └─ function
-         └─ storage
+└─ data/
+   └─ <namespace>/
+      └─ function/
+         └─ storage/
             ├─ add.mcfunction
             └─ remove.mcfunction
 ```
@@ -134,17 +134,17 @@ Datapack
 If your Datapack provides items for a player, the following functions should be available to the player:
 
 ```yml
-Datapack
+Datapack/
 ├─ pack.mcmeta
-└─ data
-   └─ <namespace>
-      └─ function
-         ├─ item
-         │  └─ all
+└─ data/
+   └─ <namespace>/
+      └─ function/
+         ├─ item/
+         │  └─ all/
          │     └─ give.mcfunction
-         └─ app
-            └─ <...>
-               └─ <module>
+         └─ app/
+            └─ <...>/
+               └─ <module>/
                   └─ give.mcfunction
 ```
 
