@@ -154,3 +154,6 @@ Datapack/
 
 ### ...
 ...
+
+## External Libraries
+External libraries or libraries in general should follow this structure:
